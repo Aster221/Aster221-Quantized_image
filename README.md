@@ -1,16 +1,38 @@
-## Hi there 👋
 
-<!--
-**Aster221/Aster221** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+from PIL import Image
 
-Here are some ideas to get you started:
+import matplotlib.pyplot as plt
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+
+image_path = '1.png'
+
+image = Image.open(image_path)
+
+quantized_image = image.quantize(colors=16)
+
+
+plt.figure(figsize=(12, 6))
+
+plt.subplot(1, 2, 1)
+
+plt.title('Original Image')
+
+plt.imshow(image)
+
+plt.axis('off')
+
+plt.subplot(1, 2, 2)
+
+plt.title('Quantized Image (16 Colors)')
+
+plt.imshow(quantized_image)
+
+plt.axis('off')
+
+plt.show()
+
+quantized_image.save('2.png')
+
+<div align="center">
+  <img src="Q1.jpg" />
+</div>
